@@ -1,16 +1,16 @@
 function getComputerChoice(){
-    computerChoiceArr=["Rock","Paper","Scissor"]
+    computerChoiceArr=["rock","paper","scissor"]
     result=computerChoiceArr[Math.floor(Math.random()*computerChoiceArr.length)]
     return result
 }
 function playRound(playerSelection,computerSelection){
-    if (computerSelection=="Scissor" && playerSelection=="Rock"){
+    if (computerSelection=="scissor" && playerSelection=="rock"){
         return `You won! ${playerSelection} beats ${computerSelection} `
     }
-    else if (computerSelection=="Paper" && playerSelection=="Scissor"){
+    else if (computerSelection=="paper" && playerSelection=="scissor"){
         return `You won! ${playerSelection} beats ${computerSelection} `
     }
-    else if (computerSelection=="Rock" && playerSelection=="Paper"){
+    else if (computerSelection=="rock" && playerSelection=="paper"){
         return `You won! ${playerSelection} beats ${computerSelection} `
     }
     else if (computerSelection==playerSelection){
@@ -20,7 +20,7 @@ function playRound(playerSelection,computerSelection){
         return `You lose! ${computerSelection} beats ${playerSelection}`
      }
 }
-let playerSelection="Rock"
+let playerSelection=prompt(" What would you use? rock, paper or scissor?")
 let computerSelection=getComputerChoice()
 console.log(computerSelection,playerSelection)
 console.log(playRound(playerSelection,computerSelection))
@@ -28,6 +28,7 @@ console.log(playRound(playerSelection,computerSelection))
 function game(){
     for (i=0;i<5;i++){
         console.log(i)
+        let playerSelection=prompt(" What would you use? rock, paper or scissor?").toLowerCase()
         console.log(playRound(playerSelection,computerSelection))
         computerSelection=getComputerChoice()
     }
