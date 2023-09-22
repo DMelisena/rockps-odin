@@ -3,21 +3,24 @@ function getComputerChoice(){
     result=computerChoiceArr[Math.floor(Math.random()*computerChoiceArr.length)]
     return result
 }
+winning =`The Opponent use ${computerSelection}, You won! ${playerSelection} beats ${computerSelection} `
+draw =`Both of you used ${playerSelection}, It's a tie`
+losing = `The Opponent use ${computerSelection}, You lose! ${computerSelection} beats ${playerSelection}`
 function playRound(playerSelection,computerSelection){
     if (computerSelection=="scissor" && playerSelection=="rock"){
-        return `You won! ${playerSelection} beats ${computerSelection} `
+        return winning
     }
     else if (computerSelection=="paper" && playerSelection=="scissor"){
-        return `You won! ${playerSelection} beats ${computerSelection} `
+        return winning
     }
     else if (computerSelection=="rock" && playerSelection=="paper"){
-        return `You won! ${playerSelection} beats ${computerSelection} `
+        return winning
     }
     else if (computerSelection==playerSelection){
-        return `Both of you used ${playerSelection}, It's a tie`
+        return draw
     }
     else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+        return losing
      }
 }
 let playerSelection=prompt(" What would you use? rock, paper or scissor?")
