@@ -6,8 +6,10 @@ function getComputerChoice(){
 }
 
 //choices selection variables
-let playerSelection=prompt(" What would you use? rock, paper or scissor?")
-let computerSelection=getComputerChoice()
+//let playerSelection=prompt(" What would you use? rock, paper or scissor?")
+//let computerSelection=getComputerChoice()
+let playerSelection=""
+let computerSelection=""
 
 //Game's output
 winning =`You used ${playerSelection},The Opponent use ${computerSelection}, You won! ${playerSelection} beats ${computerSelection} `
@@ -33,13 +35,15 @@ function playRound(playerSelection,computerSelection){
 //Show on console log what's going on
 //console.log(computerSelection,playerSelection)
 //console.log(playRound(playerSelection,computerSelection))
-use=''
 //console to run when opening the web
 function game(use){
     //let playerSelection=prompt(" What would you use? rock, paper or scissor?").toLowerCase()
-    let playerSelection=use.toLowerCase()
+    playerSelection=use.toLowerCase()
     computerSelection=getComputerChoice()
-    console.log(computerSelection)
+    winning =`You used ${playerSelection},The Opponent use ${computerSelection}, You won! ${playerSelection} beats ${computerSelection} `
+    draw =`You used ${playerSelection},Both of you used ${playerSelection}, It's a tie`
+    losing = `You used ${playerSelection},The Opponent use ${computerSelection}, You lose! ${computerSelection} beats ${playerSelection}`
+    console.log(playerSelection, computerSelection)
     console.log(playRound(playerSelection,computerSelection))
 }
 
