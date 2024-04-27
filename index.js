@@ -21,4 +21,9 @@ function getComputerChoice(){
 
 }
 getComputerChoice()
-
+let myChoice=""
+function getHumanChoice(){
+  myChoice=window.prompt("pick R, S, or P","R");
+  console.log(myChoice)
+}
+getHumanChoice()
