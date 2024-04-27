@@ -17,13 +17,44 @@ function getComputerChoice(){
     enemyChoice = "S"
       break;
   }
-  console.log(enemyChoice)
+  return enemyChoice
 
 }
-getComputerChoice()
-let myChoice=""
+let myChoice="";
 function getHumanChoice(){
   myChoice=window.prompt("pick R, S, or P","R");
-  console.log(myChoice)
+  return myChoice
 }
-getHumanChoice()
+
+function playRound(humanChoice,computerChoice){
+  if (humanChoice==computerChoice){
+    console.log("draw");
+  }
+  else if (humanChoice=="R"){
+      if (computerChoice=="S"){
+        console.log("You Win")
+        }
+      else{
+        console.log("You Lose")
+        }
+  }
+  else if (humanChoice=="S"){
+      if (computerChoice=="P"){
+        console.log("You Win")
+        }
+      else{
+        console.log("You Lose")
+        }
+  }
+  else {
+      if (computerChoice=="R"){
+        console.log("You Win")
+        }
+      else{
+        console.log("You Lose")
+        }
+  }
+}
+  const human = getHumanChoice();
+  const computer = getComputerChoice();
+  playRound(human,computer)
